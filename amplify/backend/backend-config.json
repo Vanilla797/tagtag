@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "tagtagf6923b4f": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
+  "storage": {
+    "image": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
+  }
+}
