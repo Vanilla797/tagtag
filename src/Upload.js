@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Amplify, { Storage } from "aws-amplify";
 import styled from "styled-components";
 import awsconfig from "./aws-exports";
-
+import Input from "@material-ui/core/Input";
 Amplify.configure(awsconfig);
 
 function Upload() {
+  const [upload, setUpload] = useState();
+
   async function onChange(e) {
     const file = e.target.files[0];
     try {
-      await Storage.put(file.name, file);
+      await Storage.put(file.name, file, {
+        level: "private", // contentType is optional
+      });
       console.log("upload done");
+      setUpload("uploaded");
       alert("Image uploaded successfully");
     } catch (error) {
       console.log("Error uploading file: ", error);
@@ -35,10 +40,10 @@ const Container = styled.div`
   box-shadow: 0 1px 3px gray;
   text-align: center;
 `;
-const Input = styled.input`
-  font-size: 18px;
-  padding: 10px;
-  border-radius: 5px;
-  border: solid;
-  width: 250px;
-`;
+// const Input = styled.input`
+//   font-size: 18px;
+//   padding: 10px;
+//   border-radius: 5px;
+//   border: solid;
+//   width: 300px;
+// `;

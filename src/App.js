@@ -1,22 +1,21 @@
 import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-// import Login from "./Login";
-// import SignUp from "./SignUp";
-// import Header from "./Header";
-import Amplify, { Storage } from "aws-amplify";
+
+import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";
-import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
+
 import Upload from "./Upload";
+import AuthStateApp from "./Authentication";
 
 Amplify.configure(awsconfig);
 function App() {
   return (
     <div>
-      <AmplifySignOut />
+      <AuthStateApp />
       <Upload />
     </div>
   );
 }
 
-export default withAuthenticator(App);
+export default App;

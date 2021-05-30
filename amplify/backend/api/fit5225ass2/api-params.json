@@ -1,0 +1,42 @@
+{
+  "paths": [
+    {
+      "name": "/images",
+      "lambdaFunction": "tagtag75d2dcdc",
+      "privacy": {
+        "private": true,
+        "auth": [
+          "/POST",
+          "/GET",
+          "/PUT",
+          "/PATCH",
+          "/DELETE"
+        ]
+      },
+      "policyResourceName": "/images"
+    }
+  ],
+  "resourceName": "fit5225ass2",
+  "apiName": "fit5225ass2",
+  "functionArns": [
+    {
+      "lambdaFunction": "tagtag75d2dcdc"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 0,
+    "authRoleName": "amplify-tagtag-dev-193645-authRole",
+    "unAuthRoleName": "amplify-tagtag-dev-193645-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "tagtag75d2dcdc",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}
